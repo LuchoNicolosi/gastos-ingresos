@@ -24,8 +24,8 @@
       class="container bg-light d-flex flex-column justify-content-center align-items-center mt-5 p-5"
     >
       <h2>Gastos e Ingresos</h2>
-      <div class="col-12 d-inline-flex justify-content-between">
-        <div class="col-3">
+      <div class="col-12 d-block vw-80 mw-800">
+        <div class="col-3 mx-auto m-5 w-100">
           <form class="needs-validation" novalidate>
             <div class="mb-3" id="descDiv">
               <label for="descripcion" class="form-label">Descripcion</label>
@@ -76,13 +76,15 @@
               />
               <div class="invalid-feedback">Complete este campo</div>
             </div>
-            <button type="submit" class="btn btn-dark">Guardar</button>
-            <button type="button" class="btn btn-dark" id="delete">
-              Eliminar todo
-            </button>
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="submit" class="btn btn-dark mr-2">Guardar</button>
+              <button type="button" class="btn btn-dark ml-2" id="delete">
+                Eliminar todo
+              </button>
+            </div>
           </form>
         </div>
-        <div class="col-8 mr-2">
+        <div class="col-8 mx-md-auto mr-2 w-80">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <a
