@@ -36,7 +36,7 @@ const month = [
 //renders
 const renderTable = (state) => {
   const tableHTML = `
-        <table class="table">
+        <table class="table d-flex justify-content-center align-items-center flex-wrap">
             <thead>
                 <tr>
                     <th scope="col">#</th>
