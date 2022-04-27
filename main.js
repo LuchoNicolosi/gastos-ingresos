@@ -9,8 +9,6 @@ const tipo = form.elements.tipo;
 const fecha = form.elements.fecha;
 const tabla = document.querySelector("#tabla");
 const deleteAll = document.getElementById("delete");
-console.log(deleteAll);
-console.log(tabla);
 
 //localStorage
 const saveInLocalStorage = (state) => {
@@ -146,10 +144,37 @@ const renderChart = (state) => {
 };
 
 //handlers
+(function () {
+  "use strict";
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll(".needs-validation");
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          form.classList.remove("was-validated");
+
+          return;
+        }
+
+        form.classList.add("was-validated");
+        console.log(form);
+      },
+      false
+    );
+  });
+})();
 
 const handlerSubmit = (e) => {
   e.preventDefault();
-  console.log(e.target.name);
+
   if (
     descripcion.value !== "" &&
     monto.value !== "" &&
