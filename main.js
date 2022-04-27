@@ -202,11 +202,14 @@ const handlerDelete = ({ target }) => {
   if (target.nodeName !== "BUTTON") {
     return;
   }
-
-  state.splice(0);
-  saveInLocalStorage(state);
-  renderTable(state);
-  renderChart(state);
+  if (!state[0]) {
+    return;
+  } else if (window.confirm("Estas seguro?")) {
+    state.splice(0);
+    saveInLocalStorage(state);
+    renderTable(state);
+    renderChart(state);
+  }
 };
 
 //init
